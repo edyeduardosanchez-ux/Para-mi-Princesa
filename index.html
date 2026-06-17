@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Julieta ❤️</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+    font-family:'Arial',sans-serif;
+    overflow:hidden;
+}
+
+#envelope{
+    width:220px;
+    height:140px;
+    background:#ff7aa2;
+    position:relative;
+    cursor:pointer;
+    border-radius:0 0 10px 10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    transition:transform .5s;
+}
+
+#envelope:hover{
+    transform:scale(1.05);
+}
+
+#envelope::before{
+    content:"";
+    position:absolute;
+    top:-70px;
+    left:0;
+    width:0;
+    height:0;
+    border-left:110px solid transparent;
+    border-right:110px solid transparent;
+    border-bottom:70px solid #ff95b8;
+}
+
+#openText{
+    position:absolute;
+    width:100%;
+    text-align:center;
+    top:50%;
+    transform:translateY(-50%);
+    color:white;
+    font-size:26px;
+    font-weight:bold;
+}
+
+#letter{
+    display:none;
+    text-align:center;
+    animation:fadeIn 2s;
+}
+
+h1{
+    color:#ff3d78;
+    padding:20px;
+}
+
+.dog{
+    font-size:100px;
+    margin-top:20px;
+    animation:bounce 1.5s infinite;
+}
+
+.kiss{
+    position:absolute;
+    font-size:35px;
+    animation:kissMove 2s linear infinite;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+@keyframes kissMove{
+    from{
+        opacity:1;
+        transform:translateX(0) translateY(0);
+    }
+    to{
+        opacity:0;
+        transform:translateX(120px) translateY(-50px);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="envelope" onclick="openLetter()">
+    <div id="openText">Ábreme ❤️</div>
+</div>
+
+<div id="letter">
+    <h1>
+        Te extraño mi Julieta ❤️<br><br>
+        Ya quiero verte.<br><br>
+        Te amo princess 💕
+    </h1>
+
+    <div class="dog">🐶</div>
+    <div class="kiss">💋</div>
+</div>
+
+<script>
+function openLetter(){
+    document.getElementById("envelope").style.display="none";
+    document.getElementById("letter").style.display="block";
+}
+</script>
+
+</body>
+</html>
